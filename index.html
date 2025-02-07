@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Analyse des systèmes éducatifs
+#### Inégalités scolaires et systèmes ségrégatifs
+
+Nathanaël Friant
+
+2024-2025
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### La semaine passée
+
+- Vidéo de la Fondation Roi Baudouin
+	- Différents facteurs
+	- Comment le quasi-marché scolaire peut créer des cercles vicieux de ségrégation?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Un facteur: le quasi-marché
+
+  <iframe src="http://modelingcommons.org/browse/one_model/7528?embedded=true" width="800" height="600" frameborder="0" scrolling="no" allowfullscreen ></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Les écoles deviennent interdépendantes
+
+- Le recrutement au sein d'un établissement est plus ou moins dépendant du recrutement des autres établissements. 
+- Hiérarchisation implicite entre les établissements
+
+<aside class="notes"><blockquote>
+<p> &quot;On appelle « interdépendances compétitives » les situations dans lesquelles une école X est affectée (directement ou indirectement) par les logiques d’action d’autres écoles du même espace, ou par les comportements d’une partie des parents » (Maroy, 2006)</p>
+</blockquote>
+</div></aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Stratégies de positionnement
+
+- Spécialisation des établissements:
+	- Capter les meilleurs élèves en offrant les options les plus valorisantes pour les parents de classe moyenne
+	- Spécialisation dans l’accueil des élèves « à problèmes »
+	- Les établissements positionnés à ces deux extrêmes sont moins sensibles aux stratégies des autres établissements que ceux en position intermédiaire
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Stratégies de positionnement (2)
+- Différenciation de l'offre éducative à l'intérieur même de l'établissement: une implantation s'adresse à certains profils, une autre implantation à d'autres profils. 
+- Notion de niche éducative: publics spécifiques et protection contre les effets du marché
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Stratégies de positionnement (4)
+
+- Conquête du marché (entrepreneurs)
+- Se reposer sur sa bonne réputation (rentiers)
+- Tenter d'innover (essayeurs)
+
+Un équilibre dynamique qui se maintient... 
+
+Notes:
+•Certains adoptent des stratégies entrepreneuriales de conquête du marché, ce qui renforce la concurrence.
+
+•D’autres tentent de définir des compromis de coexistence, voire de coopération, qui cherchent à garder la hiérarchie des établissements tout en limitant la concurrence ouverte (limiter les ouvertures d’offre scolaire qui pénalisent le voisin, par exemple)
+
+• Importance du travail sur la réputation et l’image (branding) (Draelants et Dumay, 2016)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Stratégies de positionnement (3)
+
+Comment améliorer le modèle simple de quasi-marché que nous avons vu en début de séance? 
+- En termes de stratégie de positionnement des établissements? 
+- En termes de critères de choix des élèves (ou leurs familles)? 
+- En termes de caractéristiques des élèves? 
+
+Proposez de nouveaux paramètres à insérer dans le modèle...
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Un peu de théorie - Les apports de la recherche internationale
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Finalement, pourquoi des quasi-marchés? 
+
+- Il n'y en a pas partout (France... )
+- C'est parfois historique, comme en Belgique
+- C'est parfois promu comme une façon de régler certains problèmes de ségrégation résidentielle, notamment
+- Cela correspond bien à des valeurs de libre choix très prégnantes actuellement
+- Certains chercheurs y voient une possibilité d'amélioration de l'éducation (mais c'est critiqué)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Et pourquoi "quasi"? 
+
+<img src="https://www.test-achats.be/-/media/ta/images/home/info%20pages-personal%20area/labels/labels-newbranding-ok/teaser__fr-labels-final.jpg?rev=ba0867f6-06fd-4ec2-886d-43e71f3c6bf7&mw=480&hash=98095A6C96E1759D3906C7469E4285AA" alt="" style="object-fit: scale-down">
+
+
+<aside class="notes"><p>On n&#39;est pas dans une situation de marché parfait. Il n&#39;y a par exemple pas de régulation par les prix: en Belgique, les élèves et leurs parents ne paient pas directement le coût réel de l&#39;éducation. Cela est supporté par l&#39;état. Vous ne trouverez donc pas d&#39;écoles se targuant d&#39;une qualité exceptionnelle pour un prix tout aussi exorbitant; ni d&#39;écoles coûtant trois fois rien pour une qualité médiocre. Ce n&#39;est donc pas un marché à proprement parler. Pourtant, nous avons des consommateurs qui font des choix en fonction de ce qu&#39;ils perçoivent de la &quot;qualité&quot; des établissements.</p>
+</div></aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Article influent de Chubb & Moe (1997)
+
+- Un article scientifique qui a popularisé les positions défendant le quasi-marché en éducation. 
+- S'inspirer des écoles privées pour réguler l'école
+- Promotion d'une régulation par le marché plutôt qu'une régulation basée sur un contrôle politique et bureaucratique.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Augmentation de l'autonomie
+
+- Cela augmenterait l'autonomie des établissements scolaires 
+- Mais cette autonomie ne signifie pas absence de contrôle: les établissements sont indirectement contrôlés par la société.
+- Les parents peuvent "voter avec leurs pieds": il vaut mieux les satisfaire sous peine de les voir partir ailleurs.
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Mais tout le monde a-t-il le choix?
+
+<img src="https://i0.wp.com/world-education-blog.org/wp-content/uploads/2017/11/unesco15-fff-school-choice.jpg?resize=2048%2C1448&ssl=1" alt="|600" style="width: 600px; object-fit: fill">
+
+<small>&copy; GEM Report, Unesco</small>
+
+<aside class="notes"><ul>
+<li><p>Classes populaires: contraintes matérielles et culturelles (travail, distance perçue de l’école, organisation familiale) à « choix » locaux</p>
+</li>
+<li><p>Classes moyennes: engagement stratégique prenant en compte un horizon temporel plus long et davantage de considérations éducatives</p>
+</li>
+<li><p>Par conséquent, la promotion du marché est une politique de classe: elle restitue aux classes moyennes de nouvelles possibilités de développer des stratégies de reproduction de leur position sociale</p>
+</li>
+</ul>
+<p>Référence: Ball, Bowe, &amp; Gewirtz (1991)</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Critères de choix des élèves et de leurs familles
+
+- Diffèrent-ils selon leurs caractéristiques? 
+- Sont-ils plus contraints pour les uns que pour les autres? 
+- Reflètent-ils une même vision de l'éducation chez les uns et les autres?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Critères de sélection de la part écoles
+
+- Les écoles sélectionnent-elles leur public? 
+- Si oui, quels sont les critères? 
+- Ces critères diffèrent-ils selon les caractéristiques de l'école?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Comment raffiner le modèle? 
+
+- Allez voir le modèle projeté au début du cours: http://modelingcommons.org/browse/one_model/7528 
+- Testez-le, voyez ce que les modifications des paramètres changent aux résultats du modèle.
+- Décrivez ce que vous changeriez dans les critères de choix des élèves.
+- Décrivez ce que vous changeriez dans les critères de sélection des écoles.
+- Ajouteriez-vous des variables à prendre en compte? Si oui, lesquelles?
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"fast"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
