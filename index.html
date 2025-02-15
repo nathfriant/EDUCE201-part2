@@ -107,7 +107,82 @@ Nathanaël Friant
 ### Un facteur: le quasi-marché
 
   <iframe src="http://modelingcommons.org/browse/one_model/7528?embedded=true" width="800" height="600" frameborder="0" scrolling="no" allowfullscreen ></iframe>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+
+<aside class="notes"><h3 id="modèle-de-ségrégation-scolaire">MODÈLE DE SÉGRÉGATION SCOLAIRE</h3>
+<h4 id="quest-ce-que-cest-">QU&#39;EST-CE QUE C&#39;EST ?</h4>
+<p>Ce modèle simule la dynamique de ségrégation scolaire dans un système avec quatre écoles. Il montre comment les choix individuels basés sur les seuils de tolérance et un système de sélection scolaire plus ou moins strict peuvent mener à une ségrégation du système scolaire.</p>
+<h4 id="comment-ça-fonctionne">COMMENT ÇA FONCTIONNE</h4>
+<p>Le modèle comprend quatre écoles et trois catégories d&#39;élèves (favorisés, moyens, défavorisés). Chaque année :</p>
+<ul>
+<li>100 nouveaux élèves apparaissent et doivent choisir une école</li>
+<li>Les élèves progressent d&#39;une année à l&#39;autre dans la même école</li>
+<li>Après 6 ans, les élèves quittent le système</li>
+<li>Chaque école a une capacité limitée par année (par défaut 60 places)</li>
+</ul>
+<p>Les élèves choisissent leur école en fonction de leurs seuils de tolérance :</p>
+<ul>
+<li>Les élèves favorisés ont un seuil de tolérance pour la proportion d&#39;élèves non-favorisés</li>
+<li>Les élèves moyens ont un seuil de tolérance pour la proportion d&#39;élèves aux extrêmes (favorisés + défavorisés)</li>
+<li>Les élèves défavorisés ont un seuil de tolérance pour la proportion d&#39;élèves non-défavorisés</li>
+</ul>
+<p>Quand une école est pleine, son niveau de sélectivité (contrôlé par un slider) détermine :</p>
+<ul>
+<li>À 0 : choix purement aléatoire parmi les candidats</li>
+<li>À 1 : sélection stricte basée sur le groupe majoritaire</li>
+<li>Entre 0 et 1 : mélange proportionnel des deux méthodes</li>
+</ul>
+<h4 id="comment-lutiliser">COMMENT L&#39;UTILISER</h4>
+<ol>
+<li><p>Ajustez les paramètres avec les curseurs :</p>
+<ul>
+<li>tolerance-favorises : niveau d&#39;acceptation des non-favorisés (0-1)</li>
+<li>tolerance-moyens : niveau d&#39;acceptation des extrêmes (0-1)</li>
+<li>tolerance-defavorises : niveau d&#39;acceptation des non-défavorisés (0-1)</li>
+<li>selectivite-ecoles : degré de sélectivité des écoles (0-1)</li>
+</ul>
+</li>
+<li><p>Cliquez sur &quot;setup&quot; pour initialiser le modèle</p>
+</li>
+<li><p>Cliquez sur &quot;go&quot; pour lancer la simulation</p>
+</li>
+<li><p>Observez :</p>
+<ul>
+<li>La répartition spatiale des élèves autour des écoles (rouge = favorisés, vert = moyens, bleu = défavorisés)</li>
+<li>Les pourcentages de chaque catégorie dans chaque école</li>
+<li>L&#39;évolution de l&#39;indice de ségrégation des élèves défavorisés</li>
+</ul>
+</li>
+</ol>
+<h4 id="éléments-à-noter">ÉLÉMENTS À NOTER</h4>
+<ul>
+<li>Avec une tolérance de 1 pour tous les groupes et une sélectivité de 0, la distribution reste aléatoire</li>
+<li>Plus les seuils de tolérance sont bas, plus la ségrégation émerge rapidement</li>
+<li>Le système de sélection des écoles peut amplifier ou atténuer la ségrégation selon son niveau de strictness</li>
+</ul>
+<h4 id="extensions-possibles">EXTENSIONS POSSIBLES</h4>
+<ul>
+<li>Ajouter des zones géographiques avec des compositions sociales différentes</li>
+<li>Intégrer des coûts de transport</li>
+<li>Modifier les règles de priorité</li>
+<li>Ajouter des politiques de quotas</li>
+<li>Introduire des spécialisations d&#39;écoles</li>
+</ul>
+<h4 id="crédits-et-références">CRÉDITS ET RÉFÉRENCES</h4>
+<p>Auteur : Nathanaël Friant
+Code généré par Claude 3.5 Sonnet (Anthropic,2025)</p>
+<p>Ce modèle s&#39;inspire des travaux sur la ségrégation résidentielle (Schelling) et des recherches sur les quasi-marchés scolaires.</p>
+<p>Il a été créé en février 2025 dans le cadre du cours d&#39;analyse des systèmes éducatifs à l&#39;Université libre de Bruxelles. Il est principalement destiné aux étudiant·es de ce cours à des fins éducatives. </p>
+<h4 id="licence">LICENCE</h4>
+<p>Ce modèle est disponible sous licence Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Vous êtes libre de :</p>
+<ul>
+<li>Partager et adapter le matériel</li>
+<li>L&#39;utiliser à des fins commerciales
+À condition de :</li>
+<li>Créditer l&#39;auteur original</li>
+<li>Partager sous la même licence</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### Les écoles deviennent interdépendantes
@@ -145,11 +220,11 @@ Nathanaël Friant
 Un équilibre dynamique qui se maintient... 
 
 Notes:
-•Certains adoptent des stratégies entrepreneuriales de conquête du marché, ce qui renforce la concurrence.
+Certains adoptent des stratégies entrepreneuriales de conquête du marché, ce qui renforce la concurrence.
 
-•D’autres tentent de définir des compromis de coexistence, voire de coopération, qui cherchent à garder la hiérarchie des établissements tout en limitant la concurrence ouverte (limiter les ouvertures d’offre scolaire qui pénalisent le voisin, par exemple)
+D’autres tentent de définir des compromis de coexistence, voire de coopération, qui cherchent à garder la hiérarchie des établissements tout en limitant la concurrence ouverte (limiter les ouvertures d’offre scolaire qui pénalisent le voisin, par exemple)
 
-• Importance du travail sur la réputation et l’image (branding) (Draelants et Dumay, 2016)
+ Importance du travail sur la réputation et l’image (branding) (Draelants et Dumay, 2016)
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -164,8 +239,10 @@ Proposez de nouveaux paramètres à insérer dans le modèle...
 </div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-## Un peu de théorie - Les apports de la recherche internationale
-</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+## Un peu de théorie - Les apports de la recherche internationale 
+
+<aside class="notes"><p>Voir le chapitre de Christian Maroy &quot;Quand les parents choisissent l&#39;école&quot; mis à disposition dans le dossier &quot;Articles à lire&quot; sur l&#39;UV.</p>
+</div></aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### Finalement, pourquoi des quasi-marchés? 
@@ -175,7 +252,29 @@ Proposez de nouveaux paramètres à insérer dans le modèle...
 - C'est parfois promu comme une façon de régler certains problèmes de ségrégation résidentielle, notamment
 - Cela correspond bien à des valeurs de libre choix très prégnantes actuellement
 - Certains chercheurs y voient une possibilité d'amélioration de l'éducation (mais c'est critiqué)
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+
+<aside class="notes"><p>A l’heure actuelle en FWB, on peut donc observer :</p>
+<p> 1. School Choice</p>
+<p>       …D’un choix philosophique à une logique de « consommateurs d’écoles » (Dupriez &amp; Maroy, 1998)</p>
+<ol>
+<li><p>School Autonomy // Diversité d’offres</p>
+</li>
+<li><p>Subventionnement différencié</p>
+</li>
+</ol>
+<p>Moyens des écoles liés au nombre d’élèves recrutés/attirés vers elles (plus d’élèves = plus riches)</p>
+<p>[1+2+3]  = Quasi-marché scolaire (par ex : Vandenberghe, 1998 ; Dupriez &amp; Dumay, 2011)</p>
+<p>Cette réalité s’explique par le contexte historique (cf. création de la Belgique, slides précédentes)</p>
+<p>…Alors qu’ailleurs (UK, Pays-bas, USA) c’est l’inverse : les politiques visant à instaurer une régulation marchande sont plus récentes (quelques décennies)</p>
+<p>En FWB, on peut-même identifier derrière les très nombreuses réformes, une volonté politique de limiter le marché et de centraliser davantage le système</p>
+<p>Carte scolaire (France): le lieu de résidence définit l’école publique dans laquelle l’élève devra être inscrit.</p>
+<p>Quasi-marché historique, comme en Belgique: choix totalement libre de l’école par les parents, pour des raisons à la base philosophiques.</p>
+<p>[Pratiques de sélection (masquées) des écoles : elles choisissent aussi les élèves dans certains cas…]</p>
+<p>       [Choix (faiblement) limité depuis une décennie environ (préférences)]</p>
+<p>Quasi-marché promu dans le cadre de politiques récentes : Angleterre, Australie, Nouvelle-Zélande (choix libre des parents)</p>
+<p>School Choice peut être informé (publications des résultats, cf UK) ou pas</p>
+<p>Desegregation busing aux USA (années 1970)</p>
+</div></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### Et pourquoi "quasi"? 
@@ -191,7 +290,22 @@ Proposez de nouveaux paramètres à insérer dans le modèle...
 
 - Un article scientifique qui a popularisé les positions défendant le quasi-marché en éducation. 
 - S'inspirer des écoles privées pour réguler l'école
-- Promotion d'une régulation par le marché plutôt qu'une régulation basée sur un contrôle politique et bureaucratique.
+- Promotion d'une régulation par le marché plutôt qu'une régulation basée sur un contrôle politique et bureaucratique. 
+
+Notes:
+- Article influent qui a popularisé les positions défendant le marché
+
+- Comparaison entre écoles privées et écoles publiques
+
+- Proposition de s’inspirer des écoles privées pour réguler l’école
+
+- 3 arguments :
+
+1. Le « système institutionnel de contrôle » des écoles a de profondes incidences sur leurs logiques organisationnelles et pédagogiques.
+
+2. Si les écoles publiques américaines ont une qualité problématique, c’est en raison d’un système de régulation basé sur un « contrôle politique et bureaucratique », qui limite leur autonomie, donne trop d’influence aux hommes politiques et aux bureaucrates. Il en résulterait, outre un manque d’autonomie des établissements, des buts incohérents, des tensions entre staff et directions et un faible leadership des directions.
+
+3. À l’opposé, le système institutionnel basé sur le marché tendrait à favoriser l’émergence de caractéristiques organisationnelles ou pédagogiques favorables à l’efficacité scolaire : en effet, dans ce système, les écoles disposent d’une autonomie tout en étant indirectement contrôlées « par la société via le marché ». Le choix de l’école est donc un incitant fort pour l’école à rencontrer les besoins des familles et des étudiants.
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -233,8 +347,56 @@ Proposez de nouveaux paramètres à insérer dans le modèle...
 
 - Les écoles sélectionnent-elles leur public? 
 - Si oui, quels sont les critères? 
-- Ces critères diffèrent-ils selon les caractéristiques de l'école?
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+- Ces critères diffèrent-ils selon les caractéristiques de l'école? 
+
+<aside class="notes"><h2 id="quelques-remarques">Quelques remarques</h2>
+<h3 id="spirale-du-déclin-en-angleterre-et-en-nouvelle-zélande-illustrée-par-de-nombreuses-études">Spirale du déclin en Angleterre et en Nouvelle-Zélande illustrée par de nombreuses études</h3>
+<ul>
+<li><p>Ecoles défavorisées</p>
+</li>
+<li><p>Ont tendance à avoir des résultats bruts plus faibles</p>
+</li>
+<li><p>Résultats sont rendus publics</p>
+</li>
+<li><p>Par conséquent, moins de demande, ou élèves plus défavorisés</p>
+</li>
+<li><p>Ecoles plus favorisés</p>
+</li>
+<li><p>Résultats bruts plus élevés</p>
+</li>
+<li><p>Rendus publics</p>
+</li>
+<li><p>Par conséquent, plus de demande</p>
+</li>
+<li><p>Tendance à sélectionner les &quot;meilleurs&quot; sur un plan scolaire et social</p>
+</li>
+<li><p>→ Augmentation de la ségrégation sociale et ethnique</p>
+</li>
+</ul>
+<h3 id="mais-étude-de-gorard-taylor--fitz-2002-en-angleterre-et-au-pays-de-galles">Mais: Étude de Gorard, Taylor &amp; Fitz (2002) en Angleterre et au Pays de Galles</h3>
+<ul>
+<li><p>Etude qui s’inscrit en porte à faux de la majorité des travaux établissant une hausse de la ségrégation dans les contextes où une logique marchande est introduite</p>
+</li>
+<li><p>Spirale du déclin peu fondée empiriquement</p>
+</li>
+<li><p>Sur un échantillon de 30 LEAs, seules 28% des écoles perdent des élèves en nombre absolu</p>
+</li>
+<li><p>Même les « failing schools » ne perdent pas souvent des élèves avant d’avoir été déclarées en échec</p>
+</li>
+<li><p>Même parmi les écoles qui pourraient potentiellement être dans une spirale du déclin (seulement 12), on ne voit pas automatiquement une augmentation de la part d’élèves défavorisés</p>
+</li>
+<li><p>Rôle important des LEAs qui contrecarrent ou atténuent les effets du libre choix:</p>
+</li>
+<li><p>Perpétuer en réalité le zonage</p>
+</li>
+<li><p>Fermer des écoles si les effectifs globaux diminuent</p>
+</li>
+<li><p>Obliger les écoles à respecter des quotas d’élèves forts/faibles</p>
+</li>
+<li><p>Les dispositifs institutionnels nationaux ne suffisent pas à prédire de façon complète les effets locaux. Il faut tenir compte des politiques locales, des logiques d’action effectives des acteurs locaux.</p>
+</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### Comment raffiner le modèle? 
@@ -352,7 +514,7 @@ Proposez de nouveaux paramètres à insérer dans le modèle...
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"fast"}, queryOptions);
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"showNotes":true,"transition":"slide","transitionSpeed":"fast"}, queryOptions);
     </script>
 
     <script>
